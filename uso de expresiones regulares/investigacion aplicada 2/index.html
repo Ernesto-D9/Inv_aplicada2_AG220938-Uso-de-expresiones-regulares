@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Expresiones Regulares</title>
+
+</head>
+
+<body>
+
+    <header class="p-3 text-bg-dark">
+        <div class="container">
+            <h1 class="text-center">Uso de expresiones regulares</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="px-4 py-2 my-4 text-center">
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-2">
+                    A continuacion se presentan algunos ejemplos usando <span class="fw-bold">expresiones regulares</span>. <span class="fw-bold text-primary">Por Hugo Ardon</p>
+                </p>
+            </div>
+        </div>   
+        <div class="row">
+            <div class="col-12">
+                <form>
+                    <div class="row">
+                        <div class="col shadow-lg rounded py-4">
+                            <label class="form-label fs-5" for="idTxtNombre">Nombre Completo</label>
+                            <input class="form-control is-invalid" type="text" placeholder="Juan Perez" id="idTxtNombre">
+                            <div class="invalid-feedback my-2">
+                                <p class="fw-bold fs-6">Por favor, introduce un valor numerico</p>
+                            </div>
+                            <div class="valid-feedback my-2">
+                                <p class="fw-bold fs-6">Correcto!</p>
+                            </div>
+                        </div>
+                        <div class="col shadow-lg rounded ms-4 bg-dark text-white">
+                            <p class="mt-3 ms-4">Expresion regular utilizada: <span class="fw-bold text-primary">/^[a-zA-Z]+(?:\s[A-Za-z]+)+$/</span> busca validar solo letras siguiendo el patron:<br>
+                            <span class="fw-bold text-primary">^</span> : inicio de la cadena <br>
+                            <span class="fw-bold text-primary">[A-Za-z]+</span> : al menos una letra <br>
+                            <span class="fw-bold text-primary">(?:\s[A-Za-z]+)+</span> : uno o mas grupos de espacios + letras <br>
+                            <span class="fw-bold text-primary">$</span> : fin de la cadena
+                        </p>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col shadow-lg rounded py-4">
+                            <label class="form-label fs-5" for="idTxtMail">Email</label>
+                            <input type="email" class="form-control is-invalid" placeholder="example@gmail.com" id="idTxtMail">
+                            <div class="invalid-feedback my-2">
+                                <p class="fw-bold fs-6">Por favor, introduce un valor numerico</p>
+                            </div>
+                            <div class="valid-feedback my-2">
+                                <p class="fw-bold fs-6">Correcto!</p>
+                            </div>
+                        </div>
+                        <div class="col shadow-lg rounded ms-4 bg-dark text-white">
+                            <p class="mt-3 ms-5">Expresion regular utilizada: <span class="fw-bold text-primary">/^[\w.-]+@[\w.-]+\.\w+$/</span> busca validar un email, siguiendo el patron:<br> 
+                            <span class="fw-bold text-primary">[ ]</span> : conjunto de caracteres permitidos <br>
+                            <span class="fw-bold text-primary">[\w.-]</span> : letras, numeros, guion bajo y punto <br>
+                            <span class="fw-bold text-primary">.</span> : literalmente un punto <br>
+                            <span class="fw-bold text-primary">-</span> : el guion <br>
+                            <span class="fw-bold text-primary">+</span> : uno o mas caracteres de ese conjunto<br> 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col shadow-lg rounded py-4">
+                            <label class="form-label fs-5" for="idTxtTelefono">Telefono</label>
+                            <input class="form-control is-invalid" type="number" placeholder="xxxxxxxx" id="idTxtTelefono">
+                            <div class="invalid-feedback my-2">
+                                <p class="fw-bold fs-6">Por favor, introduce un valor numerico</p>
+                            </div>
+                            <div class="valid-feedback my-2">
+                                <p class="fw-bold fs-6">Correcto!</p>
+                            </div>
+                        </div>
+                        <div class="col shadow-lg rounded ms-4 bg-dark text-white">
+                             <p class="mt-3 ms-5">Expresion regular utilizada: <span class="fw-bold text-primary">/^\d{8}$/</span> busca validar un numero telefonico <br><span class="fw-bold text-primary">\d{8} : exactamente 8 digitos</span></p>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col">
+                            <button class="btn btn-primary " type="submit" id="idBtnEnviar">Enviar formulario</button>
+                        </div>
+                    </div>
+                </form>
+            </div>   
+        </div>
+    </div>
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>
